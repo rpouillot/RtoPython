@@ -8,17 +8,19 @@ R
 ```
 x <- c(1,2,3)
 x[1]
+# 1
 ```
 Python
 ```
 x = [1,2,3]
 x[1]
+# 2
 ```
 
 ### R fills arrays in column, Numpy in line
 R
 ```
-matrix(1:12, nrow=3)[1,]
+matrix(1:12, ncol=4, nrow=3)[1,]
 # Note: ncol=4 is facultative
 # [1] 1 4 7 10
 ```

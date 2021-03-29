@@ -178,6 +178,9 @@ int(3.0)
 
 pandas Dataframe to numpy array: df.value
 
+numpy array to list: array.tolist()
+
+
 
 ## Equivalences
 
@@ -187,8 +190,10 @@ pandas Dataframe to numpy array: df.value
 |\|<br>\|\||\|<br>or|
 | [aperm(a, perm)](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/aperm)<br>aperm(a, c(3,1,2))| [np.moveaxis(a, source, destination)](https://numpy.org/doc/stable/reference/generated/numpy.moveaxis.html)<br>np.moveaxis(a,2,0)|
 | [c()](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/c)<br>c(1:3,4,6)| [numpy.r_](https://numpy.org/doc/stable/reference/generated/numpy.r_.html)<br>numpy.r_[1:3, 4, 6]<br>|
+| x[1:n]|x[range(0,n)]<br>x[numpy.r_[0:n]]]|
 |[ifelse(test, yes, no)](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/ifelse)|[np.where(cond,x,y)](https://numpy.org/doc/stable/reference/generated/numpy.where.html)|
 |indexing without loosing dimensionnality: a[1,1,drop=FALSE]|a[[1],[1]]|
+|expand.grid(c(1,2,3),c(4,5,6),c(7,8,9))|np.array([(a,b,c) for c in (7,8,9) for b in (4,5,6) for a in (1,2,3)])|
 | ----------- | ----------- |
 |dgamma(x, shape, rate = 1)<br>note: one can use dgamma(x, shape, scale=1) but need to name the scale argument|scypi.stats.gamma(a=shape, loc=0, scale=1/rate)|
 |dunif(x, min=0, max=1)|scypi.stats.uniform(loc=0, scale=1) defined on the [loc, loc+scale] interval!|
